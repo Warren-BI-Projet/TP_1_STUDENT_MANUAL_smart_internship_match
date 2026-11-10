@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Internship Match</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="wrap"><p class="eyebrow">PROJET 1 · AIDE À LA DÉCISION</p><h1>Smart Internship Match</h1><p>Repérez les stages à examiner, les compétences à développer et l’avancement de vos candidatures.</p></div></header>
+  <main class="wrap">
+    <div id="notice" role="status"></div>
+    <section aria-labelledby="overview"><div class="section-head"><div><p class="eyebrow">01 / VUE D’ENSEMBLE</p><h2 id="overview">Votre recherche en chiffres</h2></div><span id="updated"></span></div>
+      <div class="cards"><article><span>Offres officielles</span><strong id="n-offers">—</strong></article><article><span>Score médian</span><strong id="median">—</strong></article><article><span>Offres ≥ 70 %</span><strong id="high">—</strong></article><article><span>Candidatures envoyées</span><strong id="sent">0</strong></article><article><span>Taux de réponse</span><strong id="response-rate">—</strong></article></div>
+      <p class="hint">Le score est une aide au tri. Lisez toujours l’offre avant de candidater. Les candidatures restent dans ce navigateur.</p>
+    </section>
+    <section class="columns" aria-label="Compétences et qualité des données">
+      <article class="panel"><p class="eyebrow">02 / ÉCARTS</p><h2>Compétences à développer</h2><div id="gaps" class="bars"></div></article>
+      <article class="panel"><p class="eyebrow">03 / QUALITÉ</p><h2>Couverture des données</h2><dl><div><dt>Source officielle</dt><dd id="sources">—</dd></div><div><dt>Rémunération indiquée</dt><dd id="compensation">—</dd></div><div><dt>Offres sans compétence extraite</dt><dd id="empty-skills">—</dd></div></dl><p class="hint">L’extraction est assistée par IA : contrôlez les champs avant toute décision.</p></article>
+    </section>
+    <section aria-labelledby="offers-title"><div class="section-head"><div><p class="eyebrow">04 / PRIORISATION</p><h2 id="offers-title">Offres à examiner</h2></div><label>Score minimum <select id="filter"><option value="0">Toutes</option><option value="0.5">50 %</option><option value="0.7">70 %</option></select></label></div><div id="offers" class="offer-list"></div></section>
+    <section aria-labelledby="tracker-title"><div class="section-head"><div><p class="eyebrow">05 / ACTION & SUIVI</p><h2 id="tracker-title">Mes candidatures</h2></div><button id="export" type="button">Exporter le suivi</button></div>
+      <form id="application-form"><label>Offre <select id="application-offer" required></select></label><label>Date d’envoi <input id="application-date" type="date" required></label><label>Statut <select id="application-status"><option>Envoyée</option><option>Réponse reçue</option><option>Entretien</option><option>Refus</option><option>Acceptée</option></select></label><button type="submit">Ajouter</button></form>
+      <div class="table-wrap"><table><thead><tr><th>Offre</th><th>Envoi</th><th>Statut</th><th>Suivi</th></tr></thead><tbody id="applications"></tbody></table></div>
+      <p class="hint">Aucune candidature ni coordonnée personnelle n’est envoyée au serveur. Exportez régulièrement le suivi pour en garder une copie.</p>
+      <div class="monitor"><div><h3>Contrôle de suivi</h3><p>Signale une candidature envoyée depuis plus de 10 jours sans réponse.</p></div><button id="check" type="button">Lancer le contrôle</button></div><div id="check-result" role="status"></div>
+    </section>
+  </main>
+  <footer class="wrap">Source des offres : France Travail · Calcul local et transparent · Décision humaine</footer>
+  <script src="app.js"></script>
+</body>
+</html>
